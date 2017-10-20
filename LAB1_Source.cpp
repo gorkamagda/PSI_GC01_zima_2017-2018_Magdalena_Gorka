@@ -70,7 +70,7 @@ void wczytaj_dane(Neuron n1,double **tw, int n){
 	string linia,pom;
 	fstream plik;	
 
-	plik.open("dane.txt", ios::in);
+	plik.open("LAB1_dane.txt", ios::in);
 
 	if(plik.good()==false)
 	{
