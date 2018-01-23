@@ -1,5 +1,5 @@
 #include <iostream>
-#include "perceptron.h"
+#include "LAB1_perceptron.h"
 #include <fstream>
 #include <cstdlib>
 #include <string>
@@ -120,7 +120,7 @@ void wczytaj_dane(Neuron n1,double **tw, int n){
 }
 double korekcja_w1(double r,Neuron n1){
 	//cout<<"Funkcja aktywacji: "<<n1.fun_act(n1.suma());
-	double c=0.1;//stala uczenia
+	double c=0.5;//stala uczenia
 	double dw1=c*r*n1.get_x1();//o ile sie zmieni waga1
 	//cout<<"  W1 przed: "<<n1.w1;
 	n1.w1=n1.w1+dw1;
@@ -129,7 +129,7 @@ double korekcja_w1(double r,Neuron n1){
 }
 double korekcja_w2(double r,Neuron n1){
 	//cout<<"Funkcja aktywacji: "<<n1.fun_act(n1.suma());
-	double c=0.2;//stala uczenia
+	double c=0.5;//stala uczenia
 	double dw2=c*r*n1.get_x2();//o ile sie zmieni waga2
 	//cout<<"  W2 przed: "<<n1.w2;
 	n1.w2=n1.w2+dw2;
