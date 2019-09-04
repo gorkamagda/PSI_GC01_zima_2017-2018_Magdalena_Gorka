@@ -1,6 +1,6 @@
 #include <iostream>
 #include <time.h>
-#include "perceptron.h"
+#include "LAB1_perceptron.h"
 using namespace std;
 
 void Neuron::set_w1( double n1 )
@@ -32,7 +32,7 @@ double Neuron::get_w1(){
 		return x2;
 	}
 double Neuron::fun_act(double suma){
-	return (2/(1+exp(-2*0.2*suma)) - 1); //B - wspolczynnik uczenia (0.1 lub 0.5), tangens hiperboliczny - zwraca wartosci od -1 do 1
+	return (2/(1+exp(-2*0.5*suma)) - 1); //B - wspolczynnik uczenia (0.1 lub 0.2 lub 0.5), tangens hiperboliczny - zwraca wartosci od -1 do 1, Sigmoidalna funkcja bipolarna (tangens hiperboliczny)
 }
 void Neuron::losuj_wagi(){
 		srand(time(NULL));
@@ -46,5 +46,3 @@ double Neuron::suma(){
 	sum=(get_x1()*get_w1())+(get_x2()*get_w2());
 	return sum;
 }
-
-
